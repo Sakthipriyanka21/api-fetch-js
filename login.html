@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color:Orange; 
+    }
+
+    .form-container {
+      max-width: 400px;
+      padding: 20px;
+      background-color: #000;
+      color: #FFA500; 
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Login</h2>
+  <form id="loginForm" novalidate>
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" class="form-control" id="username" name="username" required>
+      <div class="invalid-feedback">Please enter a username.</div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" name="password" required>
+      <div class="invalid-feedback">Please enter a password.</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+  <p>Don't have an account?<a href="signup.html">Signup</a></p>
+</div>
+
+<script>
+  const loginForm = document.getElementById("loginForm");
+
+  loginForm.addEventListener("submit", function (event) {
+    if (!loginForm.checkValidity()) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    loginForm.classList.add("was-validated");
+  });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
